@@ -1,0 +1,12 @@
+{
+  "name": "github-timeline",
+  "displayName": "github-timeline",
+  "expo": {
+    "name": "github-timeline",
+    "slug": "github-timeline",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
