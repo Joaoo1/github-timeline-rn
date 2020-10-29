@@ -1,30 +1,32 @@
+/* eslint-disable react/style-prop-object */
 import 'react-native-gesture-handler';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+import {
+  Poppins_400Regular as PoppinsRegular,
+  Poppins_300Light as PoppinsLight,
+  Poppins_600SemiBold as PoppinsSemiBold,
+  useFonts,
+} from '@expo-google-fonts/poppins';
+
+import AppStack from './src/routes';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    PoppinsLight,
+    PoppinsRegular,
+    PoppinsSemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <NavigationContainer>
+    <>
+      <AppStack />
       <StatusBar style="dark" />
-      <View style={styles.container}>
-        <Text style={styles.title}>GitHub Timeline</Text>
-      </View>
-    </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  title: {
-    fontSize: 32,
-    color: '#000000',
-  }
-});
