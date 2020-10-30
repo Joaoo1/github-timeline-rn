@@ -19,7 +19,7 @@ const general = {
     fontFamily: 'PoppinsRegular',
     fontSize: fonts.regular,
     color: colors.text,
-  }
+  },
 };
 
 export default general;
