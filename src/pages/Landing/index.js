@@ -17,8 +17,8 @@ const Landing = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>GitHub Timeline</Text>
-      <Image />
-      <Text style={[styles.text, { textAlign: 'center' }]}>
+      <Image style={styles.image} />
+      <Text style={styles.centeredText}>
         Este é um aplicativo para você conseguir visualizar todos os seus
         repositórios que estão no GitHub seguindo uma linha do tempo.
       </Text>

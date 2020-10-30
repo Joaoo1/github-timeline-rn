@@ -9,27 +9,20 @@ import About from './pages/About';
 
 const { Navigator, Screen } = createStackNavigator();
 
-const headerOptions = {
-  title: 'GitHub Timeline',
-  headerTitleStyle: {
-    fontFamily: 'PoppinsRegular',
-    marginStart: '15%', // Work around to center the title
-    marginTop: 3, // Title seems to be far up
-  },
-};
-
 function AppStack() {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Landing">
-        <Screen
-          name="Landing"
-          component={Landing}
-          options={{ headerShown: false }}
-        />
-        <Screen name="Search" component={Search} options={headerOptions} />
-        <Screen name="Timeline" component={Timeline} options={headerOptions} />
-        <Screen name="About" component={About} options={headerOptions} />
+      <Navigator
+        initialRouteName="Landing"
+        screenOptions={{
+          cardStyle: { backgroundColor: '#fff' },
+          headerShown: false,
+        }}
+      >
+        <Screen name="Landing" component={Landing} />
+        <Screen name="Search" component={Search} />
+        <Screen name="Timeline" component={Timeline} />
+        <Screen name="About" component={About} />
       </Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,10 @@
 const fonts = {
-  big: 18,
-  regular: 16,
-  tiny: 12,
+  bigSize: 18,
+  regularSize: 16,
+  tinySize: 12,
+  defaultRegular: 'PoppinsRegular',
+  defaultBold: 'PoppinsSemiBold',
+  defaultLight: 'PoppinsLight',
 };
 
 export default fonts;

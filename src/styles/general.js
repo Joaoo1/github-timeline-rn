@@ -3,6 +3,15 @@ import fonts from './fonts';
 import metrics from './metrics';
 
 const general = {
+  container: {
+    flex: 1,
+    marginStart: metrics.baseHorinzontalMargin,
+    marginEnd: metrics.baseHorinzontalMargin,
+    paddingTop: metrics.baseTopMargin,
+    marginBottom: metrics.baseBottomMargin,
+    justifyContent: 'space-between',
+  },
+
   button: {
     height: metrics.buttonHeight,
     borderRadius: metrics.baseRadius,
@@ -10,15 +19,28 @@ const general = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   buttonText: {
-    fontFamily: 'PoppinsSemiBold',
-    fontSize: fonts.regular,
+    fontFamily: fonts.defaultBold,
+    fontSize: fonts.regularSize,
     color: colors.buttonText,
   },
+
   text: {
-    fontFamily: 'PoppinsRegular',
-    fontSize: fonts.regular,
+    fontFamily: fonts.defaultRegular,
+    fontSize: fonts.regularSize,
     color: colors.text,
+  },
+
+  textInput: {
+    paddingLeft: metrics.placeholderPadding,
+    borderWidth: 1,
+    borderColor: colors.inputBorder,
+    borderRadius: metrics.baseRadius,
+    height: metrics.inputHeight,
+    fontSize: fonts.regularSize,
+    fontFamily: fonts.defaultRegular,
+    backgroundColor: colors.inputBackground,
   },
 };
 

@@ -1,25 +1,24 @@
 import { StyleSheet } from 'react-native';
 
-import { general, metrics } from '../../styles';
+import { general, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    marginStart: metrics.baseHorinzontalMargin,
-    marginEnd: metrics.baseHorinzontalMargin,
-    paddingTop: metrics.baseVerticalMargin,
-    marginBottom: metrics.baseVerticalMargin,
-  },
   title: {
-    fontFamily: 'PoppinsRegular',
+    fontFamily: fonts.defaultRegular,
     fontSize: 40,
     alignSelf: 'center',
     marginTop: 50,
   },
-  image: {
-    margin: 20,
+
+  centeredText: {
+    textAlign: 'center',
+    ...general.text,
   },
+
+  image: {
+    marginStart: 20,
+  },
+
   ...general,
 });
 
