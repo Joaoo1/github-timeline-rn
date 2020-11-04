@@ -8,13 +8,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-  rightText: {
-    textAlign: 'right',
-    marginBottom: 20,
-    marginRight: 30,
-    ...general.text,
-  },
-
   eventDetail: {
     paddingStart: 15,
     paddingEnd: 15,
@@ -37,6 +30,14 @@ const styles = StyleSheet.create({
 
   timeContainer: {
     minWidth: 80,
+  },
+
+  textContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+    marginRight: 30,
   },
 
   ...general,

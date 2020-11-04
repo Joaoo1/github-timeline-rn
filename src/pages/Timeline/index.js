@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { View, Text } from 'react-native';
 import ListTimeline from 'react-native-timeline-flatlist';
@@ -7,15 +8,18 @@ import PageHeader from '../../components/PageHeader';
 import styles from './styles';
 
 const Timeline = ({ route }) => {
-  const data = route.params;
+  const { repos, user } = route.params;
 
   return (
     <>
       <PageHeader />
       <View style={styles.timelineContainer}>
-        <Text style={styles.rightText}>Usuário: Joaoo1</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>{`Usuário: ${user}`}</Text>
+          <Text style={styles.text}>{`Repositórios: ${repos.length}`}</Text>
+        </View>
         <ListTimeline
-          data={data}
+          data={repos}
           circleSize={25}
           circleColor="rgb(196,196,196)"
           lineColor="rgb(142, 142, 142)"

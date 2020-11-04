@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import Toast from 'react-native-simple-toast';
+import moment from 'moment';
 
 import api from '../../services/api';
 import PageHeader from '../../components/PageHeader';
@@ -21,21 +22,27 @@ const Search = () => {
     }
 
     api
-      .get(`users/${user}/repos`)
+      .get(`users/${user}/repos`, {
+        params: { sort: 'create', direction: 'desc', per_page: 1000 },
+      })
       .then((response) => {
         const repos = response.data.map((repo) => ({
           description: repo.description,
           title: repo.name,
-          time: repo.created_at,
+          time: moment(new Date(repo.created_at))
+            .subtract(3, 'hours')
+            .format('DD/MM/YY'),
         }));
 
-        navigate('Timeline', repos);
+        navigate('Timeline', { repos, user });
       })
       .catch((error) => {
         if (error.response) {
           const { status } = error.response;
           if (status === 404) {
             Toast.show('Usuário não encontrado!');
+          } else {
+            Toast.show('Ocorreu um erro!');
           }
         } else {
           Toast.show('Ocorreu um erro!');
@@ -56,7 +63,7 @@ const Search = () => {
             autoCorrect={false}
             placeholder="Nome de usuário"
             style={styles.textInput}
-            onChangeText={(text) => setUser(text)}
+            onChangeText={setUser}
             value={user}
           />
         </View>
