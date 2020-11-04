@@ -6,34 +6,8 @@ import PageHeader from '../../components/PageHeader';
 
 import styles from './styles';
 
-const Timeline = () => {
-  const data = [
-    {
-      time: '10/12/2020',
-      title: 'Event 1',
-      description: 'Event 1 Description',
-    },
-    {
-      time: '10/12/2020',
-      title: 'Event 2',
-      description: 'Event 2 Description',
-    },
-    {
-      time: '10/12/2020',
-      title: 'Event 3',
-      description: 'Event 3 Description',
-    },
-    {
-      time: '10/12/2020',
-      title: 'Event 4',
-      description: 'Event 4 Description',
-    },
-    {
-      time: '10/12/2020',
-      title: 'Event 5',
-      description: 'Event 5 Description',
-    },
-  ];
+const Timeline = ({ route }) => {
+  const data = route.params;
 
   return (
     <>
