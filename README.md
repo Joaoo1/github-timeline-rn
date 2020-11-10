@@ -12,7 +12,7 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-04D361">
 </h1>
 
-<h3 align="center">Ferramenta para gerar a sua linha do tempo no github<br></h3>
+<h3 align="center">Ferramenta para gerar a sua linha do tempo no GitHub<br></h3>
 
 
 <p align="center"> <img src="/src/assets/svg/landing.svg" alt="timeline" height="250"> </p>
