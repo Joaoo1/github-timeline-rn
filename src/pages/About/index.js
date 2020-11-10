@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import Toast from 'react-native-simple-toast';
 
 import PageHeader from '../../components/PageHeader';
 
@@ -9,6 +10,7 @@ import styles from './styles';
 const About = () => {
   function handleRateInStore() {
     // TODO: Do rate
+    Toast.show('Disponível em breve');
   }
 
   return (
